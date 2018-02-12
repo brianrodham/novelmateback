@@ -1,0 +1,11 @@
+C:\Users\Brian\Documents\GitHub\novelmate\Backend\Backend\bin\Debug\netcoreapp2.0\Backend.deps.json
+C:\Users\Brian\Documents\GitHub\novelmate\Backend\Backend\bin\Debug\netcoreapp2.0\Backend.runtimeconfig.json
+C:\Users\Brian\Documents\GitHub\novelmate\Backend\Backend\bin\Debug\netcoreapp2.0\Backend.runtimeconfig.dev.json
+C:\Users\Brian\Documents\GitHub\novelmate\Backend\Backend\bin\Debug\netcoreapp2.0\Backend.dll
+C:\Users\Brian\Documents\GitHub\novelmate\Backend\Backend\bin\Debug\netcoreapp2.0\Backend.pdb
+C:\Users\Brian\Documents\GitHub\novelmate\Backend\Backend\obj\Debug\netcoreapp2.0\Backend.csprojResolveAssemblyReference.cache
+C:\Users\Brian\Documents\GitHub\novelmate\Backend\Backend\obj\Debug\netcoreapp2.0\Backend.csproj.CoreCompileInputs.cache
+C:\Users\Brian\Documents\GitHub\novelmate\Backend\Backend\obj\Debug\netcoreapp2.0\Backend.AssemblyInfoInputs.cache
+C:\Users\Brian\Documents\GitHub\novelmate\Backend\Backend\obj\Debug\netcoreapp2.0\Backend.AssemblyInfo.cs
+C:\Users\Brian\Documents\GitHub\novelmate\Backend\Backend\obj\Debug\netcoreapp2.0\Backend.dll
+C:\Users\Brian\Documents\GitHub\novelmate\Backend\Backend\obj\Debug\netcoreapp2.0\Backend.pdb

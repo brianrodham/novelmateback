@@ -1,0 +1,94 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using NovelMate.Models;
+using NovelMate.Objects;
+
+namespace NovelMate.Controllers
+{
+    [Produces("application/json")]
+    [Route("api/StoryNode")]
+    public class StoryNodeController : Controller
+    {
+
+        private readonly NovelMateContext _context;
+
+        public StoryNodeController(NovelMateContext context)
+        {
+            this._context = context;
+        }
+
+        // GET: api/StoryNode
+        [HttpGet]
+        public string Get()
+        {
+            return JsonConvert.SerializeObject(_context.StoryNodes);
+        }
+
+        // GET: api/StoryNode/971523
+        [HttpGet("{userId}", Name = "Get")]
+        public string Get(Guid userId)
+        {
+            List <SimpleNode> nodes = new List<SimpleNode>();
+
+            foreach(StoryNode node in _context.StoryNodes)
+            {
+                if(node.UserId == userId)
+                {
+                    nodes.Add(new SimpleNode(node.Id, node.Name));
+                }
+            }
+            
+            return JsonConvert.SerializeObject(nodes);
+        
+        }
+
+        // GET: api/StoryNode/{userId}/{nodeId}
+        [HttpGet("{userId}/{nodeId}", Name ="GetNode")]
+        public string Get(Guid userId, Guid nodeId)
+        {
+            return JsonConvert.SerializeObject(_context.StoryNodes.SingleOrDefault(item => item.UserId == userId && item.Id == nodeId));
+
+            // return JsonConvert.SerializeObject(_context.StoryNodes);
+        }
+
+
+        // POST: api/StoryNode
+        [HttpPost]
+        //public IActionResult Post([FromBody]StoryNode item)
+        public string Post([FromBody]StoryNode item)
+        {
+            item.Id = Guid.NewGuid();
+            return JsonConvert.SerializeObject(item);
+
+            /*if (item == null)
+            {
+                return BadRequest();
+            }*/
+
+            _context.StoryNodes.Add(item);
+            _context.SaveChanges();
+
+           // return CreatedAtRoute("GetNode", new { id = item.Id }, item);
+        }
+
+        // PUT: api/StoryNode/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody]string value)
+        {
+            Console.WriteLine(value);
+        }
+        
+        // DELETE: api/ApiWithActions/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+           // return JsonConvert.SerializeObject(_context.StoryNodes.SingleOrDefault(item => item.UserId == userId && item.Id == nodeId));
+        }
+    }
+}
